@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Get Match Info</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="container">
+    <h1>Enter Your Username and Tag line</h1>
+    <form id="summonerForm">
+      <div class="form-group">
+        <label for="gameName">Username:</label>
+        <input type="text" id="gameName" name="gameName" required>
+      </div>
+      <div class="form-group">
+        <label for="tagLine">Tag Line:</label>
+        <input type="text" id="tagLine" name="tagLine" required>
+      </div>
+      <button type="submit" aria-label="Get Match Information">Get Match Info</button>
+    </form>
+    <section id="results" aria-live="polite" class="hidden">
+      <!-- Results will be displayed here -->
+    </section>
+    <section id="workoutOptions" class="hidden">
+      <h2>Choose a Difficulty:</h2>
+      <div class="button-container">
+        <button type="button" data-workout="Easy">Easy</button>
+        <button type="button" data-workout="Normal">Normal</button>
+        <button type="button" data-workout="Hard">Hard</button>
+        <button type="button" data-workout="Get-Buffed">Get Buffed</button>
+      </div>
+    </section>
+    <section id="workoutPlan" class="hidden">
+      <!-- Workout plan will be displayed here -->
+    </section>
+  </main>
+  <script src="./js/client.js"></script>
+</body>
+</html>

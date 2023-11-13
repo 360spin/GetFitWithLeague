@@ -1,0 +1,173 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: url('./Images/background.png') no-repeat fixed center center;
+    background-size: cover;
+    color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: auto; /* Add this to allow scrolling */
+}
+
+body::before {
+    content: "";
+    position: fixed; /* Changed from absolute to fixed */
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(28, 35, 49, 0.5); /* Your overlay color */
+    z-index: -1; /* Keeps the overlay behind other content */
+}
+
+.hidden {
+    display: none;
+}
+
+
+/* Container styling for central content */
+.container {
+    background-color: rgba(42, 49, 64, 0.7);
+    border: 1px solid #444;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 600px;
+}
+
+/* Unified styles for headers */
+h1, h2, h3 {
+    color: #ffd700; /* Gold color */
+    text-align: center;
+}
+
+/* Styling for form labels */
+label {
+    margin-bottom: 0.5rem;
+}
+
+/* Styling for text inputs */
+input[type="text"] {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #444;
+    border-radius: 4px;
+    background-color: #33353c;
+    color: #f5f5f5;
+}
+
+/* Base button styling */
+button, .exercise-btn {
+    padding: 0.5rem;
+    border: none;
+    border-radius: 4px;
+    color: #f5f5f5;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover state for buttons */
+button:hover, .exercise-btn:hover {
+    background-color: #ff6b81; /* Lighter red */
+}
+
+/* Specific styles for primary action buttons */
+button {
+    background-color: #ff4654; /* Red accent */
+}
+
+/* Results section visibility transitions */
+#results {
+    margin-top: 2rem;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+#results.show {
+    display: block;
+    opacity: 1;
+}
+
+/* Form container styling */
+#summonerForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#workoutOptions {
+    flex-direction: row;
+    align-items: center;
+}
+
+/* Button container styling within workout options */
+#workoutOptions .button-container {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: space-between; /* This will space out the buttons evenly */
+    flex-wrap: wrap;
+}
+
+
+/* Responsive button container for larger screens */
+@media (min-width: 600px) {
+    #workoutOptions .button-container {
+        flex-direction: row;
+        justify-content: center;
+        width: auto;
+    }
+}
+
+/* Additional button styling for exercises */
+.exercise-btn {
+    margin: 5px;
+    padding: 10px 15px;
+    background-color: red; /* Default red */
+    border: none;
+}
+
+/* Completed state for exercise buttons */
+.exercise-btn.completed {
+    background-color: green; /* Green when completed */
+}
+
+/* Container for stats with wrapping and spacing */
+.stats-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+/* Individual stat boxes styling */
+.stat-box {
+    border: 1px solid #ccc;
+    padding: 8px 12px;
+    min-width: 120px;
+    text-align: center;
+}
+
+/* Message styling for congratulations */
+.congrats-msg {
+    color: #ffd700;
+}
+
+/* Workout buttons styling */
+.workout-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
